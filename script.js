@@ -1,6 +1,6 @@
 // OMDB API Key
-const apiKey = '7cc2e66b'; // Replace with your OMDB API key
-const ytapikey = 'AIzaSyCNtavGhX527UNsbkCPFDl3uA46yVxF9OE'; // Replace with your YouTube API key
+const apiKey = ''; // Replace with your OMDB API key
+const ytapikey = ''; // Replace with your YouTube API key
 
 
 // URL for fetching latest movies (for the current year)
@@ -169,7 +169,7 @@ function displayTrailer(url) {
 fetchLatestMovies();
 
 // OMDB API Key for the movie search
-const searchApiKey = '7cc2e66b';
+const searchApiKey = '';
 
 // Handle the form submission for movie search
 document.getElementById('movieForm').addEventListener('submit', function (event) {
