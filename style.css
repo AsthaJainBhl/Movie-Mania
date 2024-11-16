@@ -1,0 +1,325 @@
+body {
+    background-color: black;
+    background-position: right;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    padding: 5px;
+    text-align: end;
+    color: goldenrod;
+    font-weight: bold;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold; /* Make text bold */
+  color: Black;
+  background: linear-gradient(45deg, #FFD700, #ffcc00); /* Gradient for shine effect */
+  padding: 10px 20px;
+  border-radius: 25px; /* Curved edges */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+/* Shine Effect */
+.navbar-brand:before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(-30deg);
+  animation: shine 2s infinite;
+}
+
+/* Shine animation */
+@keyframes shine {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.navbar-brand:hover {
+  background: linear-gradient(45deg, #FFD700, #ffcc00, #ff9900); /* Slightly different gradient on hover */
+}
+
+.navbar-nav .nav-link {
+    color: White;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(250, 33, 5);
+}
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #ffcc00 !important;
+}
+
+/* Account/Login button styling */
+.account-section a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 16px;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.account-section a:hover {
+    color: #fff;
+}
+
+/* Container for trailer and news */
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
+}
+
+.trailer-container {
+  width: 100%; /* 70% of the screen width */
+  height: 100vh; /* Full viewport height */
+  background-color: #000;
+  overflow: hidden;
+}
+
+.trailer-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures trailer covers the container without distortion */
+}
+
+/* News Section */
+.news-container {
+  width: 30%; /* 30% of the screen width */
+  height: 100vh; /* Full viewport height */
+  background-color: Black;
+  overflow-y: auto; /* Allows scrolling if news content exceeds height */
+  padding: 20px;
+}
+
+.news-container h1 {
+  color: #333;
+}
+
+/* News Item Styling */
+.news-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.news-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+.news-item a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+/* Make layout responsive */
+@media (max-width: 768px) {
+  .trailer-container, .news-container {
+    width: 100%;
+    height: auto; /* Allow height to adjust for smaller screens */
+  }
+
+  .news-container {
+    padding: 10px;
+  }
+}
+.carousel {
+  width: 90%;
+  padding-left: 10px ;
+  position: relative;
+  overflow: hidden; /* Hide non-visible slides */
+  height: 80vh; /* Set a fixed height for the carousel */
+  display: flex; /* Flex container for the carousel */
+  align-items: center; /* Center items vertically within carousel */
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%; /* Show only one slide at a time */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* Adjust height based on image’s aspect ratio */
+  object-fit: contain; /* Ensure the entire image is visible */
+  border-radius: 10px;
+}
+
+/* Style for the arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Movie Tile Styles */
+.movie-tile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    max-width: 18vw;
+    flex: 0 0 calc(33.33% - 20px); 
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.movie-poster {
+    max-width: 100%;
+    height: 60vh;
+}
+.movie-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.movie-year {
+    font-weight: bold;
+}
+
+.movie-director {
+    font-style: italic;
+}
+
+.movie-genre {
+    margin-top: 10px;
+}
+
+.movie-rating {
+    font-weight: bold;
+}
+
+.movie-plot {
+    margin-top: 10px;
+}
+
+/* Form Styles */
+.form-group {
+    width: 50vw;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    flex-direction: column;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* watchlists Page Styles */
+#watchlistsList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+    .navbar a {
+        margin: 0 10px;
+    }
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 5px;
+    }
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+    .navbar {
+        padding: 10px 0;
+    }
+    .navbar a {
+        margin: 0 5px;
+    }
+    .btn {
+        padding: 5px 10px;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+@media (max-width: 768px) {
+    .movie-tile {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
